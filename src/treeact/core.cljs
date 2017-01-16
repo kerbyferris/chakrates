@@ -83,15 +83,15 @@
     ]
   )
 
-(def chakras [{:chakra 1 :color "gray" :location "foot" :render [chakra-1]}
-              {:chakra 2 :color "gray" :location "placenta" :render [chakra-2]}
-              {:chakra 3 :color "red" :location "root" :render [chakra-3]}
-              {:chakra 4 :color "orange" :location "sacral" :render [chakra-4]}
-              {:chakra 5 :color "yellow" :location "solar plexus" :render [chakra-5]}
-              {:chakra 6 :color "green" :location "heart" :render [chakra-6]}
-              {:chakra 7 :color "blue" :location "throat" :render [chakra-7]}
-              {:chakra 8 :color "purple" :location "3rd eye" :render [chakra-8]}
-              {:chakra 9 :color "violet" :location "crown" :render [chakra-9]}])
+(def chakras [{:chakra 1 :frequency 174 :color "white" :location "foot" :render [chakra-1]}
+              {:chakra 2 :frequency 285 :color "#aaa" :location "placenta" :render [chakra-2]}
+              {:chakra 3 :frequency 369 :color "red" :location "root" :render [chakra-3]}
+              {:chakra 4 :frequency 417 :color "orange" :location "sacral" :render [chakra-4]}
+              {:chakra 5 :frequency 528 :color "yellow" :location "solar plexus" :render [chakra-5]}
+              {:chakra 6 :frequency 639 :color "green" :location "heart" :render [chakra-6]}
+              {:chakra 7 :frequency 741 :color "skyblue" :location "throat" :render [chakra-7]}
+              {:chakra 8 :frequency 852 :color "purple" :location "3rd eye" :render [chakra-8]}
+              {:chakra 9 :frequency 963 :color "violet" :location "crown" :render [chakra-9]}])
 
 (defn meter []
    [:div#meter
@@ -104,14 +104,6 @@
            (if (= (:chakra @app-state) (:chakra level)) "active")
            :on-click #(set-level! level)}
           [:span (:chakra level)]]))])
-
-(defn status []
-  [:div#status
-   [:canvas#analyzer]])
-
-(defn visualize []
-  [:div#visualize {:style {:background-color (:color @app-state)}}
-   [status]])
 
 (defn controls []
   [:div#controls
@@ -135,7 +127,11 @@
    [meter]
    [controls]
    (render-levels)
-   [:p (str @app-state) (.-currentTime context)]])
+   [:div#meta-data
+    [:ul
+     [:li "STATE: "(str @app-state)]
+     [:li "CURRENT TIME: "(.-currentTime context)]]]
+   ])
 
 (r/render-component [main] (. js/document (getElementById "app")))
 
