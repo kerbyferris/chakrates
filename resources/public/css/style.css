@@ -4,33 +4,44 @@
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  justify-content: center;
 }
 
-#meter {
-  display: flex;
+#chakras {
   align-self: center;
-  width: 90%;
-  max-width: 800px;
+  display: flex;
+}
+
+#chakras ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  justify-content:center;
 }
 
 .chakra {
-  align-self: center;
+  border: 1px solid white;
+  align-items: center;
+  list-style: none;
   cursor: pointer;
-  flex: 1;
-  font-size: 130px;
-  font-weight: bold;
-  border-top: 20px solid white;
-  line-height: 100px;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 5px 0;
+  justify-content:center;
 }
 
 .chakra.active {
-  border-top: 20px solid #aaa;
   color: white;
 }
 
-#chakra-1.active {
+#chakra-1.active, #chakra-5.active {
   text-shadow: 2px 0 0 black, 0 -2px 0 black, 0 2px 0 black, -2px 0 0 black;
+}
+
+#chakra-1 {
+  border: 1px solid black;
 }
 
 #controls {
@@ -40,29 +51,29 @@
 }
 
 #controls input {
-  /* border: 1px solid black; */
-  background-color: #aaa;
   border: none;
   margin: 2px;
   padding: 12px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  outline: none;
 }
 
 #meta-data {
-  /* border: 1px solid black; */
   align-self: center;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 #meta-data ul {
   display: flex;
   flex-direction: column;
   list-style: none;
-  background-color: #aaa;
   margin: 0;
   padding: 12px 20px;
 }
 
 #meta-data ul li {
-  font-size: 14px;
-  text-align: left;
-  width: 100%;
+  padding: 5px;
 }
