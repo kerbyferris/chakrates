@@ -1,4 +1,4 @@
-(defproject treeact "0.1.0-SNAPSHOT"
+(defproject chakrates "0.1.0-SNAPSHOT"
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -26,11 +26,11 @@
               [{:id "dev"
                 :source-paths ["src"]
 
-                :figwheel {:on-jsload "treeact.core/on-js-reload"}
+                :figwheel {:on-jsload "chakrates.core/on-js-reload"}
 
-                :compiler {:main treeact.core
+                :compiler {:main chakrates.core
                            :asset-path "js/compiled/out"
-                           :output-to "resources/public/js/compiled/treeact.js"
+                           :output-to "resources/public/js/compiled/chakrates.js"
                            :output-dir "resources/public/js/compiled/out"
                            :source-map-timestamp true
                            :preloads [devtools.preload]}}
@@ -39,8 +39,8 @@
                ;; lein cljsbuild once min
                {:id "min"
                 :source-paths ["src"]
-                :compiler {:output-to "resources/public/js/compiled/treeact.js"
-                           :main treeact.core
+                :compiler {:output-to "resources/public/js/compiled/chakrates.js"
+                           :main chakrates.core
                            :optimizations :advanced
                            :pretty-print false}}]}
 

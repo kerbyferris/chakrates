@@ -1,4 +1,4 @@
-(ns treeact.core
+(ns chakrates.core
   (:require [reagent.core :as r :refer [atom]]
             [cljs-bach.synthesis :as audio :refer [connect->]]
             [squelch.core :as s]))
