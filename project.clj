@@ -13,6 +13,7 @@
                  [reagent "0.6.0"]
                  [cljs-bach "0.2.0"]
                  [squelch "0.1.3"]
+                 [leipzig "0.10.0"]
                  ]
 
   :plugins [[lein-figwheel "0.5.8"]
