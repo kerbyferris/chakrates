@@ -3,12 +3,14 @@
 #main {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
 }
 
 #chakras {
   align-self: center;
   display: flex;
+  border-radius: 77px;
+  padding: 16px;
+  margin: 30px 0;
 }
 
 #chakras ul {
@@ -20,39 +22,34 @@
 }
 
 .chakra {
-  border: 1px solid white;
+  border: 16px solid white;
+  color: #333;
+  text-transform: uppercase;
+  text-align: center;
   align-items: center;
   list-style: none;
   cursor: pointer;
   display: flex;
   width: 100px;
   height: 100px;
-  border-radius: 50px;
-  margin: 5px 0;
+  border-radius: 66px;
+  margin: -2px;
   justify-content:center;
 }
 
 .chakra.active {
-  color: white;
 }
 
 #chakra-1.active, #chakra-5.active {
-  text-shadow: 2px 0 0 black, 0 -2px 0 black, 0 2px 0 black, -2px 0 0 black;
-}
-
-#chakra-1 {
-  border: 1px solid black;
 }
 
 #controls {
   display: flex;
   align-self: center;
-  margin: 20px;
 }
 
 #controls input {
   border: none;
-  margin: 2px;
   padding: 12px 20px;
   border: 1px solid black;
   border-radius: 10px;
