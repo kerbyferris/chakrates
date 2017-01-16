@@ -1,10 +1,10 @@
-# treeact
+# Chakrates
 
-FIXME: Write a one-line description of your library/project.
+Click to chakra
 
 ## Overview
 
-FIXME: Write a paragraph about the library/project and highlight its goals.
+Web audio interface to all 9 healing solfeggic frequencies using Clojurescript
 
 ## Setup
 
