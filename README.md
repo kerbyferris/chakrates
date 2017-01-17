@@ -1,6 +1,7 @@
 # Chakrates
 
-Click to clear!
+![Alt text](resources/public/images/solfeggios.png?raw=true "Solfeggio")
+Just click to clear!
 
 ## Overview
 
