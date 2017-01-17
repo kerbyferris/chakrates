@@ -3,6 +3,32 @@
 #main {
   display: flex;
   flex-direction: column;
+  font-family: helvetica;
+}
+
+#word {
+  color: #333;
+  font-size: 100px;
+  font-weight: bold;
+  display: flex;
+  text-transform: lowercase;
+  align-self: center;
+}
+
+#word p {
+  margin: 0;
+
+}
+
+#word ul {
+  list-style: none;
+  font-size: 30px;
+  padding: 0;
+  margin: 20px 0 0;
+  line-height: .7;
+}
+
+#word li {
 }
 
 #chakras {
@@ -28,7 +54,7 @@
   text-align: center;
   align-items: center;
   list-style: none;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: flex;
   width: 100px;
   height: 100px;
@@ -49,13 +75,13 @@
 }
 
 #controls input {
+  cursor: pointer;
   border: none;
   padding: 12px 20px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: white;
   outline: none;
-  margin-bottom: 20px;
   background-color: #eee;
 }
 
