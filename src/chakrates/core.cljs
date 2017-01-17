@@ -17,6 +17,7 @@
 (defonce app-state (atom {:chakra 5,
                           :color "yellow",
                           :freq 528,
+                          :location "heart"
                           :volume full-volume
                           :is-playing true
                           :word "chakrates"
@@ -69,7 +70,6 @@
 
 (defn ping []
   (connect->
-    ;(add (sine freq) (sine (+ (count (:word @app-state)) freq)))
     (add (sine (:freq @app-state))
          (sine (+ (count (:word @app-state)) (:freq @app-state))))
     (percussive 0.8 3)
@@ -81,15 +81,13 @@
     (swap! app-state assoc :chakra (:chakra chakra))
     (swap! app-state assoc :color (:color chakra))
     (swap! app-state assoc :freq (:freq chakra))
+    (swap! app-state assoc :location (:location chakra))
     )
   (swap! app-state assoc :word word)
   (-> (ping)
       (connect-> destination)
       (run-with context (audio/current-time context) 3))
     )
-  ;(set-level! (get-chakra (word-to-numerology word)))
-  ; (ping)
-  ;)
 
 (defn chakra []
   [:div
@@ -146,6 +144,7 @@
      [:ul
       [:li "chakra: " (:chakra @app-state)]
       [:li "frequency: " (:freq @app-state)]
+      [:li "location: " (:location @app-state)]
       ]]
    [display-chakras]
    ; [meta-data]
