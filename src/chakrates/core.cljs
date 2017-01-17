@@ -19,7 +19,6 @@
                           :freq 528,
                           :location "heart"
                           :volume full-volume
-                          :is-playing true
                           :word "chakrates"
                           }))
 
@@ -56,18 +55,6 @@
   (number-to-digit
     (word-to-number word)))
 
-(defn set-level! [chakra]
-  (swap! app-state assoc :chakra (:chakra chakra))
-  (swap! app-state assoc :color (:color chakra))
-  (swap! app-state assoc :freq (:freq chakra)))
-
-(defn toggle-play! []
-  (let [is-playing (:is-playing @app-state)]
-    (if is-playing
-      (swap! app-state assoc :volume 0)
-      (swap! app-state assoc :volume full-volume))
-    (swap! app-state assoc :is-playing (not is-playing))))
-
 (defn ping []
   (connect->
     (add (sine (:freq @app-state))
@@ -81,33 +68,21 @@
     (swap! app-state assoc :chakra (:chakra chakra))
     (swap! app-state assoc :color (:color chakra))
     (swap! app-state assoc :freq (:freq chakra))
-    (swap! app-state assoc :location (:location chakra))
-    )
+    (swap! app-state assoc :location (:location chakra)))
   (swap! app-state assoc :word word)
   (-> (ping)
       (connect-> destination)
-      (run-with context (audio/current-time context) 3))
-    )
-
-(defn chakra []
-  [:div
-    (-> (ping)
-        (connect-> destination)
-        (run-with context (audio/current-time context) 3))])
+      (run-with context (audio/current-time context) 3)))
 
 (defonce word-uri "http://setgetgo.com/randomword/get.php")
 
 (defn handler [response]
    (set-word! (str response)))
 
-(defn error-handler [{:keys [status status-text]}]
-    (.log js/console (str "something bad happened: " status " " status-text)))
-
 (defn get-word []
   (GET word-uri {:response-format :text
                  :keywords? true
-                 :handler handler
-                 :error-handler error-handler}))
+                 :handler handler }))
 
 (defn display-chakras []
   [:div#chakras {:style {:background-color (:color @app-state)}}
@@ -117,16 +92,11 @@
         [:li.chakra
          {:id (str "chakra-" (:chakra chakra)),
           :style {:background-color (:color chakra)}
-          :class (if (= (:chakra @app-state) (:chakra chakra)) "active")
-          ;:on-click #(set-level! chakra)
-          }
+          :class (if (= (:chakra @app-state) (:chakra chakra)) "active")}
          (:location chakra)]))]])
 
 (defn controls []
   [:div#controls
-   ; [:input.btn {:type "button"
-   ;              :value (if (:is-playing @app-state) "Stop" "Play")
-   ;              :on-click #(toggle-play!)}]
    [:input.btn {:type "button"
                 :value "Get Word"
                 :on-click #(set-word! (get-word))}]])
@@ -146,10 +116,7 @@
       [:li "frequency: " (:freq @app-state)]
       [:li "location: " (:location @app-state)]
       ]]
-   [display-chakras]
-   ; [meta-data]
-   ;(chakra (:freq @app-state) (:volume @app-state))
-   ])
+   [display-chakras]])
 
 (r/render-component [main] (. js/document (getElementById "app")))
 
