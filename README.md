@@ -6,7 +6,7 @@
 
 Clear your chakras (known and unknown) with Clojurescript, and the Web Audio API!
 
-Just click the 'Get Word' button to get your intuition word. Chakrates will calculate the word's numerological identity, then play you the healing solfeggic tone of it's corresponding chakra.
+Just click the 'Get Word' button to get your intuition word. Chakrates will calculate the word's numerological identity, then play you the healing solfeggic tone for it's corresponding chakra.
 
 Click to clear!
 
