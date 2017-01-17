@@ -1,13 +1,14 @@
 # Chakrates
 
 ![Alt text](resources/public/images/solfeggios.png?raw=true "Solfeggio")
-Just click to clear!
 
 ## Overview
 
 Clear your chakras (known and unknown) with Clojurescript, and the Web Audio API!
 
 Just click the 'Get Word' button to get your intuition word. Chakrates will calculate the word's numerological identity, then play you the healing solfeggic tone of it's corresponding chakra.
+
+Click to clear!
 
 ## Setup
 
