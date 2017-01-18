@@ -29,8 +29,8 @@
                   {:chakra 5 :freq 528 :color "gold" :location "solar plexus"}
                   {:chakra 4 :freq 417 :color "orange" :location "sacral"}
                   {:chakra 3 :freq 369 :color "indianred" :location "root"}
-                  {:chakra 2 :freq 285 :color "#aaa" :location "placenta"}
-                  {:chakra 1 :freq 174 :color "#eee" :location "foot"}])
+                  {:chakra 2 :freq 285 :color "#aaa" :location "foot"}
+                  {:chakra 1 :freq 174 :color "#eee" :location "earthstar"}])
 
 (defn get-chakra [number]
   (first (filter #(= number (:chakra %)) chakras)))
