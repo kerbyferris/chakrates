@@ -35,7 +35,8 @@
    :update-word (fn [{:keys [active-word]}]
                   (swap! app-state assoc :word active-word)
                   (swap! app-state assoc-in [:chakra]
-                         (util/get-chakra-by-number (word-to-numerology active-word)))
+                         (util/get-chakra-by-number (word-to-numerology active-word))))
+   :play-tone (fn []
                   (-> (ping)
                       (connect-> destination)
                       (run-with context (audio/current-time context) 3)))})
@@ -48,14 +49,15 @@
 (defonce word-uri "http://setgetgo.com/randomword/get.php")
 
 (defn handler [response]
-  (put! EVENTCHANNEL [:update-word {:active-word response}])) 
+  (put! EVENTCHANNEL [:update-word {:active-word response}])
+  (put! EVENTCHANNEL [:play-tone]))
 
 (defn get-word []
   (GET word-uri {:response-format :text
                  :keywords? true
                  :handler handler }))
 
-(defn display-chakras []
+(defn display-chakras [EVENTCHANNEL]
   [:div#chakras {:style {:background-color (:color (:chakra @app-state))}}
    [:ul
     (doall
@@ -64,7 +66,9 @@
          {:id (str "chakra-" (:number chakra)),
           :style {:background-color (:color chakra)}
           :class (if (= (:chakra @app-state) (:number chakra)) "active")
-          :on-click (fn [event] (put! EVENTCHANNEL [:update-chakra {:active-chakra chakra}]))}
+          :on-click (fn [event]
+                      (put! EVENTCHANNEL [:update-chakra {:active-chakra chakra}])
+                      (put! EVENTCHANNEL [:play-tone]))}
          (:location chakra)]))]])
 
 (defn controls []
@@ -86,9 +90,8 @@
      [:ul {:style {:color (:color (:chakra @app-state))}}
       [:li "chakra: " (:number (:chakra @app-state))]
       [:li "frequency: " (:freq (:chakra @app-state))]
-      [:li "location: " (:location (:chakra @app-state))]
-      ]]
-   [display-chakras]])
+      [:li "location: " (:location (:chakra @app-state))]]]
+   (display-chakras EVENTCHANNEL)])
 
 (r/render-component [main] (. js/document (getElementById "app")))
 
