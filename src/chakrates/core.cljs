@@ -75,17 +75,24 @@
   [:div#controls
    [:input.btn {:type "button"
                 :value "Get Word"
+                :style {:background-color (:color (:chakra @app-state))}
                 :on-click #(get-word)}]])
 
 (defn main []
   [:div#main 
    [controls]
    [:div#word
-    [:p (:word @app-state)]
-     [:ul {:style {:color (:color (:chakra @app-state))}}
-      [:li "chakra: " (:number (:chakra @app-state))]
-      [:li "frequency: " (:freq (:chakra @app-state))]
-      [:li "location: " (:location (:chakra @app-state))]]]
+    [:a {:href (apply str
+                      "http://google.com/search?q="
+                      (:word @app-state)
+                      "+conspiracy")
+         :target "_blank"}
+     [:p (:word @app-state)]
+     [:span {:style {:color (:color (:chakra @app-state))}}"conspiracy >>"]]
+    [:ul {:style {:color (:color (:chakra @app-state))}}
+     [:li "chakra: " (:number (:chakra @app-state))]
+     [:li "frequency: " (:freq (:chakra @app-state))]
+     [:li "location: " (:location (:chakra @app-state))]]]
    (display-chakras EVENTCHANNEL)])
 
 (r/render-component [main] (. js/document (getElementById "app")))
