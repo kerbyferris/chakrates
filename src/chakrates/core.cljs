@@ -4,7 +4,9 @@
             [ajax.core :refer [GET ajax-request]]
             [cljs.core.async :refer [put! chan <!]]
             [cljs-bach.synthesis :as audio
-             :refer [connect-> sine percussive low-pass gain add run-with destination]]))
+             :refer [connect-> sine percussive low-pass gain add run-with destination]]
+            [chakrates.numerology :as numerology :refer [word-to-numerology]]
+            [chakrates.data :as data :refer [chakras]]))
 
 (enable-console-print!)
 
@@ -12,44 +14,14 @@
 
 (defonce context (audio/audio-context))
 
-(defonce chakras [{:number 9 :freq 963 :color "violet" :location "crown"}
-                  {:number 8 :freq 852 :color "mediumpurple" :location "3rd eye"}
-                  {:number 7 :freq 741 :color "skyblue" :location "throat"}
-                  {:number 6 :freq 639 :color "yellowgreen" :location "heart"}
-                  {:number 5 :freq 528 :color "gold" :location "solar plexus"}
-                  {:number 4 :freq 417 :color "orange" :location "sacral"}
-                  {:number 3 :freq 369 :color "indianred" :location "root"}
-                  {:number 2 :freq 285 :color "#aaa" :location "foot"}
-                  {:number 1 :freq 174 :color "#eee" :location "earthstar"}])
-
 (defonce app-state (atom {:chakra {:number 5,
                                    :freq 528,
                                    :color "yellowgreen",
                                    :location "heart"},
-                          :word "chakrates"
-                          }))
+                          :word "chakrates"}))
 
-(defn get-chakra [number]
+(defn get-chakra-by-number [number]
   (first (filter #(= number (:number %)) chakras)))
-
-(defonce alphanumeric-map
-  (zipmap
-    (map keyword (seq "abcdefghijklmnopqrstuvwxyz"))
-    (range 1 27)))
-
-(defn add-digits [number]
-  (apply + (map int (seq (str number)))))
-
-(defn word-to-number [word]
-  (int (apply str (map alphanumeric-map (map keyword (seq word))))))
-
-(defn number-to-digit [number]
-  (loop [n number]
-    (if (= 1 (count (str n)))
-      n (recur (add-digits n)))))
-
-(defn word-to-numerology [word]
-  (number-to-digit (word-to-number word)))
 
 (defn ping []
   (connect->
@@ -65,7 +37,7 @@
    :update-word (fn [{:keys [active-word]}]
                   (swap! app-state assoc :word active-word)
                   (swap! app-state assoc-in [:chakra]
-                         (get-chakra (word-to-numerology active-word)))
+                         (get-chakra-by-number (word-to-numerology active-word)))
                   (-> (ping)
                       (connect-> destination)
                       (run-with context (audio/current-time context) 3)))})
