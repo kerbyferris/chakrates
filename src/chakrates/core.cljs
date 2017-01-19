@@ -77,11 +77,6 @@
                 :value "Get Word"
                 :on-click #(get-word)}]])
 
-(defn meta-data []
-  [:div#meta-data
-   [:ul
-    [:li "STATE: "(str @app-state)]]])
-
 (defn main []
   [:div#main 
    [controls]
