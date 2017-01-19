@@ -4,9 +4,7 @@
             [ajax.core :refer [GET ajax-request]]
             [cljs.core.async :refer [put! chan <!]]
             [cljs-bach.synthesis :as audio
-             :refer [connect-> sine percussive low-pass gain add run-with destination]]
-            [leipzig.melody :refer [all bpm is phrase tempo then times where with]]
-            [squelch.core :as s]))
+             :refer [connect-> sine percussive low-pass gain add run-with destination]]))
 
 (enable-console-print!)
 

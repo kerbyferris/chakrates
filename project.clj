@@ -12,9 +12,7 @@
                   :exclusions [org.clojure/tools.reader]]
                  [reagent "0.6.0"]
                  [cljs-bach "0.2.0"]
-                 [squelch "0.1.3"]
-                 [cljs-ajax "0.5.8"]
-                 [leipzig "0.10.0"]]
+                 [cljs-ajax "0.5.8"]]
 
   :plugins [[lein-figwheel "0.5.8"]
             [lein-cljsbuild "1.1.4" :exclusions [[org.clojure/clojure]]]]
