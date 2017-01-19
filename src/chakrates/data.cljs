@@ -8,4 +8,4 @@
                   {:number 4 :freq 417 :color "orange" :location "sacral"}
                   {:number 3 :freq 369 :color "indianred" :location "root"}
                   {:number 2 :freq 285 :color "#aaa" :location "foot"}
-                  {:number 1 :freq 174 :color "#eee" :location "earthstar"}])
+                  {:number 1 :freq 174 :color "#ccc" :location "earthstar"}])
