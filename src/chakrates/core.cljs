@@ -6,13 +6,10 @@
             [cljs-bach.synthesis :as audio
              :refer [connect-> sine percussive low-pass gain add run-with destination]]
             [chakrates.numerology :as numerology :refer [word-to-numerology]]
+            [chakrates.util :as util]
             [chakrates.data :as data :refer [chakras]]))
 
 (enable-console-print!)
-
-(def EVENTCHANNEL (chan))
-
-(defonce context (audio/audio-context))
 
 (defonce app-state (atom {:chakra {:number 5,
                                    :freq 528,
@@ -20,8 +17,7 @@
                                    :location "heart"},
                           :word "chakrates"}))
 
-(defn get-chakra-by-number [number]
-  (first (filter #(= number (:number %)) chakras)))
+(defonce context (audio/audio-context))
 
 (defn ping []
   (connect->
@@ -31,13 +27,15 @@
     (low-pass 200)
     (gain 0.4)))
 
+(def EVENTCHANNEL (chan))
+
 (def EVENTS
   {:update-chakra (fn [{:keys [active-chakra]}]
                     (swap! app-state assoc-in [:chakra] active-chakra)),
    :update-word (fn [{:keys [active-word]}]
                   (swap! app-state assoc :word active-word)
                   (swap! app-state assoc-in [:chakra]
-                         (get-chakra-by-number (word-to-numerology active-word)))
+                         (util/get-chakra-by-number (word-to-numerology active-word)))
                   (-> (ping)
                       (connect-> destination)
                       (run-with context (audio/current-time context) 3)))})

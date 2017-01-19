@@ -1,15 +1,20 @@
-(ns chakrates.numerology)
+(ns chakrates.numerology
+  (:require [clojure.string :as str]))
 
 (defonce alphanumeric-map
-  (zipmap
-    (map keyword (seq "abcdefghijklmnopqrstuvwxyz"))
-    (range 1 27)))
+  (let [charset-lowercase (map char (range 97 123))
+        alphabet-as-numbers (range 1 27)]
+    (zipmap
+      (map keyword charset-lowercase) alphabet-as-numbers)))
+
+(defn letters-to-numbers [word]
+  (map alphanumeric-map (map keyword (seq (str/lower-case word)))))
+
+(defn word-to-number [word]
+  (long (apply str (letters-to-numbers word))))
 
 (defn add-digits [number]
   (apply + (map int (seq (str number)))))
-
-(defn word-to-number [word]
-  (int (apply str (map alphanumeric-map (map keyword (seq word))))))
 
 (defn number-to-digit [number]
   (loop [n number]
