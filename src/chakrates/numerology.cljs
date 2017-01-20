@@ -8,7 +8,8 @@
       (map keyword charset-lowercase) alphabet-as-numbers)))
 
 (defn letters-to-numbers [word]
-  (map alphanumeric-map (map keyword (seq (str/lower-case word)))))
+  (map alphanumeric-map
+       (map keyword (seq (str/lower-case word)))))
 
 (defn word-to-number [word]
   (long (apply str (letters-to-numbers word))))

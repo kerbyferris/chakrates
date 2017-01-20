@@ -71,18 +71,26 @@
                       (put! EVENTCHANNEL [:play-tone]))}
          (:location chakra)]))]])
 
+(defn atom-input [value]
+  [:input.field {:type "text"
+           :value @value
+           :on-change #(do (reset! value (-> % .-target .-value))
+                           (if (< 0 (count @value))
+                             (do (put! EVENTCHANNEL [:update-word {:active-word @value}])
+                                 (put! EVENTCHANNEL [:play-tone]))))}])
+
+(defn input-field []
+  (let [val (r/atom "Set Word")]
+    (fn []
+       [atom-input val])))
+
 (defn controls []
   [:div#controls
    [:input.btn {:type "button"
                 :value "Get Word"
                 :style {:background-color (:color (:chakra @app-state))}
                 :on-click #(get-word)}]
-   [:input.field {:type "input"
-                  :name "word"
-                  :value (:word @app-state)
-                  :on-change #(println "something")}]
-   ]
-  )
+   [input-field]])
 
 (defn main []
   [:div#main 
