@@ -73,7 +73,7 @@
 }
 
 .chakra.active {
-  border: 16px solid #aaa;
+  border: 16px solid #333;
   font-weight: bold;
   z-index: 1;
 }
@@ -94,8 +94,8 @@
 #controls input.btn {
   cursor: pointer;
   border: 1px solid white;
+  margin-right: 10px;
 }
 
 #controls input.field {
-  border: 1px solid #333;
 }
