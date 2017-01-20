@@ -76,7 +76,13 @@
    [:input.btn {:type "button"
                 :value "Get Word"
                 :style {:background-color (:color (:chakra @app-state))}
-                :on-click #(get-word)}]])
+                :on-click #(get-word)}]
+   [:input.field {:type "input"
+                  :name "word"
+                  :value (:word @app-state)
+                  :on-change #(println "something")}]
+   ]
+  )
 
 (defn main []
   [:div#main 

@@ -83,11 +83,18 @@
 }
 
 #controls input {
-  border: 1px solid white;
   border-radius: 10px;
   color: #333;
-  cursor: pointer;
-  font-weight: bold;
   outline: none;
+  font-weight: bold;
   padding: 12px 20px;
+}
+
+#controls input.btn {
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+#controls input.field {
+  border: 1px solid #333;
 }
