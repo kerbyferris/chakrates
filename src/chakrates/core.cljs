@@ -65,7 +65,7 @@
         [:li.chakra
          {:id (str "chakra-" (:number chakra)),
           :style {:background-color (:color chakra)}
-          :class (if (= (:chakra @app-state) (:number chakra)) "active")
+          :class (if (= (:chakra @app-state) chakra) "active")
           :on-click (fn [event]
                       (put! EVENTCHANNEL [:update-chakra {:active-chakra chakra}])
                       (put! EVENTCHANNEL [:play-tone]))}

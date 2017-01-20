@@ -73,6 +73,8 @@
 }
 
 .chakra.active {
+  border: 16px solid #aaa;
+  z-index: 1;
 }
 
 #controls {
