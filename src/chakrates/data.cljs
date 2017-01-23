@@ -6,6 +6,6 @@
                   {:number 6 :freq 639 :color "yellowgreen" :location "heart"}
                   {:number 5 :freq 528 :color "gold" :location "solar plexus"}
                   {:number 4 :freq 417 :color "orange" :location "sacral"}
-                  {:number 3 :freq 369 :color "indianred" :location "root"}
+                  {:number 3 :freq 396 :color "indianred" :location "root"}
                   {:number 2 :freq 285 :color "#aaa" :location "foot"}
                   {:number 1 :freq 174 :color "#ccc" :location "earthstar"}])
