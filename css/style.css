@@ -6,6 +6,29 @@
   font-family: helvetica;
 }
 
+#controls {
+  margin-top: 30px;
+  align-self: center;
+  display: flex;
+}
+
+#controls input {
+  border-radius: 10px;
+  color: #333;
+  outline: none;
+  font-weight: bold;
+  padding: 12px 20px;
+}
+
+#controls input.btn {
+  cursor: pointer;
+  border: 1px solid white;
+  margin-right: 10px;
+}
+
+#controls input.field {
+}
+
 #word {
   align-self: center;
   display: flex;
@@ -42,18 +65,21 @@
 
 #chakras {
   align-self: center;
-  border-radius: 77px;
   display: flex;
   margin: 30px 0;
-  padding: 16px;
+  border-radius: 260px;
 }
 
 #chakras ul {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content:center;
+  height: 520px;
   margin: 0;
   padding: 0;
+  position: relative;
+  width: 520px;
 }
 
 .chakra {
@@ -66,36 +92,67 @@
   height: 100px;
   justify-content:center;
   list-style: none;
-  margin: -1px;
   text-align: center;
   text-transform: uppercase;
   width: 100px;
+  position: absolute;
+  top: 0;
 }
 
 .chakra.active {
-  border: 16px solid #333;
+  border: 16px solid #bbb;
   font-weight: bold;
   z-index: 1;
 }
 
-#controls {
-  align-self: center;
-  display: flex;
+#chakra-3 {
+  /* root */
 }
 
-#controls input {
-  border-radius: 10px;
-  color: #333;
-  outline: none;
-  font-weight: bold;
-  padding: 12px 20px;
+#chakra-4 {
+  /* sacral */
+  top: 46px;
+  left: 319px;
 }
 
-#controls input.btn {
-  cursor: pointer;
-  border: 1px solid white;
-  margin-right: 10px;
+#chakra-5 {
+  /* solar plexus */
+  top: 161px;
+  left: 385px;
 }
 
-#controls input.field {
+#chakra-6 {
+  /* heart */
+  top: 292px;
+  left: 362px;
+}
+
+#chakra-7 {
+  /* throat */
+  top: 376px;
+  left: 260px;
+}
+
+#chakra-8 {
+  /* 3rd eye */
+  top: 376px;
+  right: 260px;
+}
+
+#chakra-9 {
+  /* crown */
+  top: 292px;
+  right: 362px;
+}
+
+#chakra-1 {
+  /* earth star */
+  top: 161px;
+  right: 385px;
+}
+
+#chakra-2 {
+  /* foot */
+  top: 46px;
+  right: 319px;
 }
