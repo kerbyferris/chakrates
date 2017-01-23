@@ -8,7 +8,7 @@ Conspiracy is confusing, and so is the Internet. Stay informed while clearing yo
 
 Click the 'Get Word' button to get your intuition word. Chakrates will calculate the word's numerological identity, then play you the healing solfeggic tone for it's corresponding chakra. If you would like, click the word itself for a link to all conspiracies related to that word.
  
-Alternatively, enter your own word, and listen to the healing numerology of your process as you type. Don't worry, you're not un-informed! You can stop typing at any time, and click to discover any conspiracy related to the last word you thought.
+Alternatively, enter your own word, and listen to the healing numerology of your process as you type. Don't worry, you're not un-informed! You can stop typing at any time, and click to discover any conspiracy related to the most recent status of your thoughts.
 
 ## Setup
 
