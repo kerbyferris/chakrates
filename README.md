@@ -4,11 +4,11 @@
 
 ## Overview
 
-Clear your chakras (known and unknown) with Clojurescript, and the Web Audio API!
+Conspiracy is confusing, and so is the Internet. Stay informed while clearing your chakras (known and unknown) leveraging Clojurescript, and the Web Audio API!
 
-Just click the 'Get Word' button to get your intuition word. Chakrates will calculate the word's numerological identity, then play you the healing solfeggic tone for it's corresponding chakra.
+Click the 'Get Word' button to get your intuition word. Chakrates will calculate the word's numerological identity, then play you the healing solfeggic tone for it's corresponding chakra. If you would like, click the word itself for a link to all conspiracy related to that word.
 
-Click to clear!
+Alternatively, enter your own word, and listen to the healing numerology of your process as you type. Don't worry, you're not un-informed! You can stop typing at any time, and click to discover any conspiracy related to the last word you thought.
 
 ## Setup
 
