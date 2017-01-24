@@ -82,7 +82,7 @@
 
 .chakra {
   align-items: center;
-  border: 10px solid white;
+  border: 12px solid white;
   border-radius: 66px;
   color: #333;
   cursor: pointer;
@@ -97,7 +97,7 @@
 }
 
 .chakra.active {
-  border: 10px solid #bbb;
+  border: 12px solid #bbb;
   font-weight: bold;
   z-index: 1;
 }
