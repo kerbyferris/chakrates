@@ -4,7 +4,7 @@
 
 ## Overview
 
-Conspiracy is confusing, and so is the Internet. Stay informed while clearing your chakras (known and unknown) leveraging Clojurescript, and the Web Audio API!
+Conspiracy is confusing, and so is the Internet. Stay informed while clearing your chakras, leveraging Clojurescript, and the Web Audio API!
 
 Click the 'Get Word' button to get your intuition word. Chakrates will calculate the word's numerological identity, then play you the healing solfeggic tone for it's corresponding chakra. If you would like, click the word itself for a link to all conspiracies related to that word.
  
