@@ -1,4 +1,4 @@
-# Chakrates
+# CHAKRATES
 
 ![Alt text](resources/public/images/solfeggios.png?raw=true "Solfeggio")
 
