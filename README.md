@@ -14,7 +14,7 @@ Alternatively, enter your own word, and listen to the healing numerology of your
 
 https://kerbyferris.github.io/chakrates/
 
-## Or Hack it for Your own
+## Hack it for Your own
 
 To get an interactive development environment run:
 
