@@ -107,6 +107,9 @@
 
 #chakra-3 {
   /* root */
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 #chakra-4 {
