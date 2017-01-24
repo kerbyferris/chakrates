@@ -46,20 +46,21 @@
     (let [[event-name event-data] (<! EVENTCHANNEL)]
       ((event-name EVENTS) event-data))))
 
-(defonce WORD_API "http://api.wordnik.com/v4/words.json/randomWord")
-(defonce API_KEY "")
-
-(defonce word-uri "https://setgetgo.com/randomword/get.php")
-
+(defonce WORD_API "https://api.wordnik.com/v4/words.json/randomWords")
+(defonce API_KEY "1e82d20adc034891c000801b43b0a7f94034ecc73d79a70bb")
 
 (defn handler [response]
-  (put! EVENTCHANNEL [:update-word {:active-word response}])
-  (put! EVENTCHANNEL [:play-tone]))
+  (let [word (:word (first response))]
+    (put! EVENTCHANNEL [:update-word {:active-word word}])
+    (put! EVENTCHANNEL [:play-tone])))
 
 (defn get-word []
-  (GET word-uri {:response-format :text
+  (GET WORD_API {:response-format :json
+                 :params {:limit 1
+                          :hasDictonaryDef true
+                          :api_key API_KEY}
                  :keywords? true
-                 :handler handler }))
+                 :handler handler}))
 
 (defn display-chakras [EVENTCHANNEL]
   [:div#chakras {:style {:background-color (:color (:chakra @app-state))}}
