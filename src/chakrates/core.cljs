@@ -11,6 +11,9 @@
 
 (enable-console-print!)
 
+(defonce API_KEY "1e82d20adc034891c000801b43b0a7f94034ecc73d79a70bb")
+(defonce WORD_API "https://api.wordnik.com/v4/words.json/randomWords")
+
 (defonce app-state (atom {:chakra {:number 5,
                                    :freq 528,
                                    :color "yellowgreen",
@@ -28,7 +31,6 @@
     (gain 0.4)))
 
 (def EVENTCHANNEL (chan))
-
 (def EVENTS
   {:update-chakra (fn [{:keys [active-chakra]}]
                     (swap! app-state assoc-in [:chakra] active-chakra)),
@@ -45,9 +47,6 @@
   (while true
     (let [[event-name event-data] (<! EVENTCHANNEL)]
       ((event-name EVENTS) event-data))))
-
-(defonce WORD_API "https://api.wordnik.com/v4/words.json/randomWords")
-(defonce API_KEY "1e82d20adc034891c000801b43b0a7f94034ecc73d79a70bb")
 
 (defn handler [response]
   (let [word (:word (first response))]
@@ -85,17 +84,22 @@
                                  (put! EVENTCHANNEL [:play-tone]))))}])
 
 (defn input-field []
-  (let [val (r/atom "Set Word")]
+  (let [val (r/atom "")]
     (fn []
        [atom-input val])))
 
 (defn controls []
   [:div#controls
-   [:input.btn {:type "button"
-                :value "Get Word"
+   [:input.btn {:type "image"
+                :src "./images/twisted_rightwards_arrows.png"
                 :style {:background-color (:color (:chakra @app-state))}
                 :on-click #(get-word)}]
-   [input-field]])
+   [input-field]
+   [:input.btn {:type "image"
+                :src "./images/clockwise_rightwards_and_leftwards_open_circle_arrows.png"
+                :style {:background-color (:color (:chakra @app-state))}
+                :on-click #(put! EVENTCHANNEL [:play-tone])}]
+   ])
 
 (defn main []
   [:div#main 
