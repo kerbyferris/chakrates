@@ -9,6 +9,14 @@ goog.require('cljs.core.async');
 goog.require('chakrates.util');
 goog.require('chakrates.numerology');
 cljs.core.enable_console_print_BANG_();
+if(typeof chakrates.core.API_KEY !== 'undefined'){
+} else {
+chakrates.core.API_KEY = "1e82d20adc034891c000801b43b0a7f94034ecc73d79a70bb";
+}
+if(typeof chakrates.core.WORD_API !== 'undefined'){
+} else {
+chakrates.core.WORD_API = "https://api.wordnik.com/v4/words.json/randomWords";
+}
 if(typeof chakrates.core.app_state !== 'undefined'){
 } else {
 chakrates.core.app_state = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$chakra,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$number,(5),cljs.core.cst$kw$freq,(528),cljs.core.cst$kw$color,"yellowgreen",cljs.core.cst$kw$location,"heart"], null),cljs.core.cst$kw$word,"chakrates"], null));
@@ -194,14 +202,6 @@ return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped(state__29845__
 });})(c__29843__auto___32206))
 );
 
-if(typeof chakrates.core.WORD_API !== 'undefined'){
-} else {
-chakrates.core.WORD_API = "https://api.wordnik.com/v4/words.json/randomWords";
-}
-if(typeof chakrates.core.API_KEY !== 'undefined'){
-} else {
-chakrates.core.API_KEY = "1e82d20adc034891c000801b43b0a7f94034ecc73d79a70bb";
-}
 chakrates.core.handler = (function chakrates$core$handler(response){
 var word = cljs.core.cst$kw$word.cljs$core$IFn$_invoke$arity$1(cljs.core.first(response));
 cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(chakrates.core.EVENTCHANNEL,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$update_DASH_word,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$active_DASH_word,word], null)], null));
@@ -284,7 +284,7 @@ return null;
 })], null)], null);
 });
 chakrates.core.input_field = (function chakrates$core$input_field(){
-var val = reagent.core.atom.cljs$core$IFn$_invoke$arity$1("Set Word");
+var val = reagent.core.atom.cljs$core$IFn$_invoke$arity$1("");
 return ((function (val){
 return (function (){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [chakrates.core.atom_input,val], null);
@@ -292,9 +292,11 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 ;})(val))
 });
 chakrates.core.controls = (function chakrates$core$controls(){
-return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_controls,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input$btn,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$type,"button",cljs.core.cst$kw$value,"Get Word",cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null),cljs.core.cst$kw$on_DASH_click,(function (){
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_controls,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input$btn,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$type,"image",cljs.core.cst$kw$src,"./images/twisted_rightwards_arrows.png",cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null),cljs.core.cst$kw$on_DASH_click,(function (){
 return chakrates.core.get_word();
-})], null)], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [chakrates.core.input_field], null)], null);
+})], null)], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [chakrates.core.input_field], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input$btn,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$type,"image",cljs.core.cst$kw$src,"./images/clockwise_rightwards_and_leftwards_open_circle_arrows.png",cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null),cljs.core.cst$kw$on_DASH_click,(function (){
+return cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(chakrates.core.EVENTCHANNEL,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$play_DASH_tone], null));
+})], null)], null)], null);
 });
 chakrates.core.main = (function chakrates$core$main(){
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_main,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [chakrates.core.controls], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_word,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$a,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$href,cljs.core.apply.cljs$core$IFn$_invoke$arity$4(cljs.core.str,"http://google.com/search?q=",cljs.core.cst$kw$word.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))),"+conspiracy"),cljs.core.cst$kw$target,"_blank"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,cljs.core.cst$kw$word.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state)))], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null)], null),"conspiracy >>"], null)], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$ul,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,"chakra: ",cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,"frequency: ",cljs.core.cst$kw$freq.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,"location: ",cljs.core.cst$kw$location.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null)], null)], null),chakrates.core.display_chakras(chakrates.core.EVENTCHANNEL)], null);
