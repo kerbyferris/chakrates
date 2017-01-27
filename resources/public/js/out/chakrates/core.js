@@ -202,8 +202,10 @@ return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped(state__29845__
 });})(c__29843__auto___32206))
 );
 
-chakrates.core.handler = (function chakrates$core$handler(response){
-var word = cljs.core.cst$kw$word.cljs$core$IFn$_invoke$arity$1(cljs.core.first(response));
+chakrates.core.handler = (function chakrates$core$handler(p__32214){
+var vec__32218 = p__32214;
+var response = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32218,(0),null);
+var word = cljs.core.cst$kw$word.cljs$core$IFn$_invoke$arity$1(response);
 cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(chakrates.core.EVENTCHANNEL,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$update_DASH_word,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$active_DASH_word,word], null)], null));
 
 return cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(chakrates.core.EVENTCHANNEL,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$play_DASH_tone], null));
@@ -212,31 +214,31 @@ chakrates.core.get_word = (function chakrates$core$get_word(){
 return ajax.core.GET.cljs$core$IFn$_invoke$arity$variadic(chakrates.core.WORD_API,cljs.core.array_seq([new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$response_DASH_format,cljs.core.cst$kw$json,cljs.core.cst$kw$params,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$limit,(1),cljs.core.cst$kw$hasDictonaryDef,true,cljs.core.cst$kw$api_key,chakrates.core.API_KEY], null),cljs.core.cst$kw$keywords_QMARK_,true,cljs.core.cst$kw$handler,chakrates.core.handler], null)], 0));
 });
 chakrates.core.display_chakras = (function chakrates$core$display_chakras(EVENTCHANNEL){
-return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_chakras,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$ul,cljs.core.doall.cljs$core$IFn$_invoke$arity$1((function (){var iter__25839__auto__ = (function chakrates$core$display_chakras_$_iter__32220(s__32221){
+return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_chakras,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$ul,cljs.core.doall.cljs$core$IFn$_invoke$arity$1((function (){var iter__25839__auto__ = (function chakrates$core$display_chakras_$_iter__32227(s__32228){
 return (new cljs.core.LazySeq(null,(function (){
-var s__32221__$1 = s__32221;
+var s__32228__$1 = s__32228;
 while(true){
-var temp__4657__auto__ = cljs.core.seq(s__32221__$1);
+var temp__4657__auto__ = cljs.core.seq(s__32228__$1);
 if(temp__4657__auto__){
-var s__32221__$2 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__32221__$2)){
-var c__25837__auto__ = cljs.core.chunk_first(s__32221__$2);
+var s__32228__$2 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__32228__$2)){
+var c__25837__auto__ = cljs.core.chunk_first(s__32228__$2);
 var size__25838__auto__ = cljs.core.count(c__25837__auto__);
-var b__32223 = cljs.core.chunk_buffer(size__25838__auto__);
-if((function (){var i__32222 = (0);
+var b__32230 = cljs.core.chunk_buffer(size__25838__auto__);
+if((function (){var i__32229 = (0);
 while(true){
-if((i__32222 < size__25838__auto__)){
-var chakra = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__25837__auto__,i__32222);
-cljs.core.chunk_append(b__32223,cljs.core.with_meta(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li$chakra,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$id,[cljs.core.str("chakra-"),cljs.core.str(cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(chakra))].join(''),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(chakra)], null),cljs.core.cst$kw$class,((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))),chakra))?"active":null),cljs.core.cst$kw$on_DASH_click,((function (i__32222,chakra,c__25837__auto__,size__25838__auto__,b__32223,s__32221__$2,temp__4657__auto__){
+if((i__32229 < size__25838__auto__)){
+var chakra = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__25837__auto__,i__32229);
+cljs.core.chunk_append(b__32230,cljs.core.with_meta(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li$chakra,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$id,[cljs.core.str("chakra-"),cljs.core.str(cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(chakra))].join(''),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(chakra)], null),cljs.core.cst$kw$class,((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))),chakra))?"active":null),cljs.core.cst$kw$on_DASH_click,((function (i__32229,chakra,c__25837__auto__,size__25838__auto__,b__32230,s__32228__$2,temp__4657__auto__){
 return (function (event){
 cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(EVENTCHANNEL,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$update_DASH_chakra,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$active_DASH_chakra,chakra], null)], null));
 
 return cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(EVENTCHANNEL,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$play_DASH_tone], null));
-});})(i__32222,chakra,c__25837__auto__,size__25838__auto__,b__32223,s__32221__$2,temp__4657__auto__))
+});})(i__32229,chakra,c__25837__auto__,size__25838__auto__,b__32230,s__32228__$2,temp__4657__auto__))
 ], null),cljs.core.cst$kw$location.cljs$core$IFn$_invoke$arity$1(chakra)], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(chakra)], null)));
 
-var G__32226 = (i__32222 + (1));
-i__32222 = G__32226;
+var G__32233 = (i__32229 + (1));
+i__32229 = G__32233;
 continue;
 } else {
 return true;
@@ -244,19 +246,19 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__32223),chakrates$core$display_chakras_$_iter__32220(cljs.core.chunk_rest(s__32221__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__32230),chakrates$core$display_chakras_$_iter__32227(cljs.core.chunk_rest(s__32228__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__32223),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__32230),null);
 }
 } else {
-var chakra = cljs.core.first(s__32221__$2);
-return cljs.core.cons(cljs.core.with_meta(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li$chakra,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$id,[cljs.core.str("chakra-"),cljs.core.str(cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(chakra))].join(''),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(chakra)], null),cljs.core.cst$kw$class,((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))),chakra))?"active":null),cljs.core.cst$kw$on_DASH_click,((function (chakra,s__32221__$2,temp__4657__auto__){
+var chakra = cljs.core.first(s__32228__$2);
+return cljs.core.cons(cljs.core.with_meta(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li$chakra,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$id,[cljs.core.str("chakra-"),cljs.core.str(cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(chakra))].join(''),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(chakra)], null),cljs.core.cst$kw$class,((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))),chakra))?"active":null),cljs.core.cst$kw$on_DASH_click,((function (chakra,s__32228__$2,temp__4657__auto__){
 return (function (event){
 cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(EVENTCHANNEL,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$update_DASH_chakra,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$active_DASH_chakra,chakra], null)], null));
 
 return cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(EVENTCHANNEL,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$play_DASH_tone], null));
-});})(chakra,s__32221__$2,temp__4657__auto__))
-], null),cljs.core.cst$kw$location.cljs$core$IFn$_invoke$arity$1(chakra)], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(chakra)], null)),chakrates$core$display_chakras_$_iter__32220(cljs.core.rest(s__32221__$2)));
+});})(chakra,s__32228__$2,temp__4657__auto__))
+], null),cljs.core.cst$kw$location.cljs$core$IFn$_invoke$arity$1(chakra)], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(chakra)], null)),chakrates$core$display_chakras_$_iter__32227(cljs.core.rest(s__32228__$2)));
 }
 } else {
 return null;
@@ -269,10 +271,10 @@ return iter__25839__auto__(chakrates.data.chakras);
 })())], null)], null);
 });
 chakrates.core.atom_input = (function chakrates$core$atom_input(value){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input$field,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$type,"text",cljs.core.cst$kw$value,(cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(value) : cljs.core.deref.call(null,value)),cljs.core.cst$kw$on_DASH_change,(function (p1__32227_SHARP_){
-var G__32230_32232 = value;
-var G__32231_32233 = p1__32227_SHARP_.target.value;
-(cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2 ? cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2(G__32230_32232,G__32231_32233) : cljs.core.reset_BANG_.call(null,G__32230_32232,G__32231_32233));
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input$field,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$type,"text",cljs.core.cst$kw$value,(cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(value) : cljs.core.deref.call(null,value)),cljs.core.cst$kw$on_DASH_change,(function (p1__32234_SHARP_){
+var G__32237_32239 = value;
+var G__32238_32240 = p1__32234_SHARP_.target.value;
+(cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2 ? cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2(G__32237_32239,G__32238_32240) : cljs.core.reset_BANG_.call(null,G__32237_32239,G__32238_32240));
 
 if(((0) < cljs.core.count((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(value) : cljs.core.deref.call(null,value))))){
 cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(chakrates.core.EVENTCHANNEL,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$update_DASH_word,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$active_DASH_word,(cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(value) : cljs.core.deref.call(null,value))], null)], null));
@@ -301,9 +303,9 @@ return cljs.core.async.put_BANG_.cljs$core$IFn$_invoke$arity$2(chakrates.core.EV
 chakrates.core.main = (function chakrates$core$main(){
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_main,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [chakrates.core.controls], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_word,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$a,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$href,cljs.core.apply.cljs$core$IFn$_invoke$arity$4(cljs.core.str,"http://google.com/search?q=",cljs.core.cst$kw$word.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))),"+conspiracy"),cljs.core.cst$kw$target,"_blank"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,cljs.core.cst$kw$word.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state)))], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null)], null),"conspiracy >>"], null)], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$ul,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$color,cljs.core.cst$kw$color.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,"chakra: ",cljs.core.cst$kw$number.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,"frequency: ",cljs.core.cst$kw$freq.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,"location: ",cljs.core.cst$kw$location.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$chakra.cljs$core$IFn$_invoke$arity$1((cljs.core.deref.cljs$core$IFn$_invoke$arity$1 ? cljs.core.deref.cljs$core$IFn$_invoke$arity$1(chakrates.core.app_state) : cljs.core.deref.call(null,chakrates.core.app_state))))], null)], null)], null),chakrates.core.display_chakras(chakrates.core.EVENTCHANNEL)], null);
 });
-var G__32234_32236 = new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [chakrates.core.main], null);
-var G__32235_32237 = document.getElementById("app");
-(reagent.core.render_component.cljs$core$IFn$_invoke$arity$2 ? reagent.core.render_component.cljs$core$IFn$_invoke$arity$2(G__32234_32236,G__32235_32237) : reagent.core.render_component.call(null,G__32234_32236,G__32235_32237));
+var G__32241_32243 = new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [chakrates.core.main], null);
+var G__32242_32244 = document.getElementById("app");
+(reagent.core.render_component.cljs$core$IFn$_invoke$arity$2 ? reagent.core.render_component.cljs$core$IFn$_invoke$arity$2(G__32241_32243,G__32242_32244) : reagent.core.render_component.call(null,G__32241_32243,G__32242_32244));
 chakrates.core.on_js_reload = (function chakrates$core$on_js_reload(){
 return null;
 });

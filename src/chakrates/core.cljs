@@ -48,8 +48,8 @@
     (let [[event-name event-data] (<! EVENTCHANNEL)]
       ((event-name EVENTS) event-data))))
 
-(defn handler [response]
-  (let [word (:word (first response))]
+(defn handler [[response]]
+  (let [word (:word response)]
     (put! EVENTCHANNEL [:update-word {:active-word word}])
     (put! EVENTCHANNEL [:play-tone])))
 
