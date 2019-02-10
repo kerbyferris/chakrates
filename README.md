@@ -1,6 +1,6 @@
 # CHAKRATES
 
-[![Chakras](resources/public/images/solfeggios.png?raw=true "Solfeggio")](https://kerbyferris.github.io/chakratese/)
+[![Chakras](resources/public/images/solfeggios.png?raw=true "Solfeggio")](https://kerbyferris.github.io/chakrates/)
 
 ## Overview
 
